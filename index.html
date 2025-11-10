@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Table Friends — 架空カトラリー展示</title>
+  <meta name="description" content="あえて使いにくい人型カトラリーを架空の商品として魅せる、Table FriendsのWeb展示雛形。3DCG画像を差し替えて利用できます。" />
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <h1>Table Friends</h1>
+        <p>架空カトラリーのWeb展示</p>
+      </div>
+      <div style="margin-left:auto;color:#99a">Designed for: 卒業研究</div>
+    </header>
+
+    <section class="hero">
+      <div class="lead">
+        <h2>使えないけど、なんだか好きになる。</h2>
+        <p>あえて“使いにくい”人型カトラリーを架空の商品としてデザインし、Webで感情的価値を伝えるための展示ページの雛形です。ここに3DCGレンダリングを差し替えて、作品世界を表現してください。</p>
+        <div class="cta">
+          <button class="btn" id="view-gallery">ギャラリーを見る</button>
+          <!-- <button class="btn secondary" id="edit-tips">編集のヒント</button> -->
+        </div>
+      </div>
+
+      <div class="card-shell">
+        <div class="card" id="hero-card" aria-hidden="true">
+          <div class="spoon-figure">
+            <!-- SVGを以下のようなimg要素に置き換え -->
+            <img src="images/cutlery03.png" alt="メインビジュアル" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3 style="margin-bottom:12px">コレクション</h3>
+      <div class="gallery" id="gallery">
+        <!-- Product cards. Replace thumbnails with your rendered images -->
+        <div class="product" data-id="p-1">
+          <div class="thumb"><img alt="cutlery01" src="images/cutlery01.png" style="max-width:100%;height:auto"/></div>
+          <h3>ジョン、ジュン（お箸）</h3>
+          <p>
+            特徴：箸の先はドリルが少し危険だが、二人の息はピッタリ<br>
+            一言セリフ：「よし、やるか」
+          </p>
+        </div>
+
+        <div class="product" data-id="p-2">
+          <div class="thumb"><img alt="cutlery02" src="images/cutlery02.png" style="max-width:100%;height:auto"/></div>
+          <h3>三太郎（フォーク）</h3>
+          <p>
+            ちょっと気取っている。見た目の愛嬌が魅力<br>
+            一言セリフ：「ホー、ホー、ホー！」
+          </p>
+        </div>
+
+        <div class="product" data-id="p-3">
+          <div class="thumb"><img alt="cutlery03" src="images/cutlery03.png" style="max-width:100%;height:auto"/></div>
+          <h3>スイレン（ナイフ）</h3>
+          <p>
+            スカートをヒラヒラさせるのがすき<br>
+            一言セリフ：「切り裂いてやるわ！」
+          </p>
+        </div>
+
+        <div class="product" data-id="p-4">
+          <div class="thumb"><img alt="cutlery04" src="images/cutlery04.png" style="max-width:100%;height:auto"/></div>
+          <h3>RYO（ナイフ）</h3>
+          <p>顔つきが特徴的。眺めているだけで楽しい。
+            
+          </p>
+        </div>
+
+        <div class="product" data-id="p-5">
+          <div class="thumb"><img alt="cutlery05" src="images/cutlery05.png" style="max-width:100%;height:auto"/></div>
+          <h3>RYO（デザートスプーン）</h3>
+          <p>顔つきが特徴的。眺めているだけで楽しい。</p>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <div>卒業研究 — Table Friends</div>
+      <div>© 2025</div>
+    </footer>
+  </div>
+
+  <!-- Modal structure -->
+  <div class="modal" id="modal">
+    <button class="close" id="close-modal">×</button>
+    <div class="modal-inner" role="dialog" aria-modal="true">
+      <div class="modal-grid">
+        <div class="media" id="modal-media" style="display:flex;align-items:center;justify-content:center;background:#fafbff;border-radius:10px;padding:10px">
+          <!-- large image injected here -->
+          <img src="" alt="" id="modal-img" style="max-width:100%;height:auto;border-radius:8px" />
+        </div>
+        <div class="meta">
+          <h4 id="modal-title">タイトル</h4>
+          <p id="modal-desc">説明</p>
+          <div style="margin-top:16px"><strong>ブランド:</strong> Table Friends</div>
+          <div style="margin-top:12px;color:#99a">※架空の商品です。購入できません。</div>
+          <div style="margin-top:18px;display:flex;gap:10px">
+            <button class="btn" id="close-2">閉じる</button>
+            <button class="btn secondary" disabled>購入ページへ（ダミー）</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

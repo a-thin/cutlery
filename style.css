@@ -301,6 +301,28 @@ footer {
      justify-content:center;
 }
 
+/* Warped rectangle style for recommend section */
+.recommend--warp{ 
+    position: relative; 
+    overflow: visible; 
+}
+.recommend--warp .recommend-inner{
+    background: #FBD8B0; 
+    transform: skewX(-6deg); 
+    margin: 0 -50px; /* extend slightly beyond the container to feel full-width */
+    padding: 28px 50px; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+.recommend--warp .recommend-inner > .container{
+    transform: skewX(6deg); /* un-skew inner content so text is horizontal */
+}
+
+@media (max-width:780px){
+    .recommend--warp .recommend-inner{ margin: 0 -20px; padding: 20px; transform: skewX(-4deg); }
+    .recommend--warp .recommend-inner > .container{ transform: skewX(4deg); }
+}
+
 .recommend container{
      font-size:28px;
     color:#2b2b2b; 

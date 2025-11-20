@@ -277,7 +277,7 @@ footer {
 .img-wrap img{ width:100%; max-width:420px; border-radius:12px; box-shadow:0 10px 24px rgba(20,20,30,0.06); }
 
 /* If an image inside .img-wrap also uses .hero-img, make it match the hero sizing */
-.img-wrap img.hero-img{ width:100%; max-width:100%; height:auto; max-height:600px; border-radius:12px; box-shadow:0 10px 24px rgba(20,20,30,0.06); }
+.img-wrap img.hero-img{ width:100%; max-width:600px; height:auto; max-height:600px; border-radius:12px; box-shadow:0 10px 24px rgba(20,20,30,0.06); }
 
 
 .check-list{ list-style:none; margin-top:12px; }

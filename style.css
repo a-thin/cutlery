@@ -260,7 +260,7 @@ footer {
 
 /* Header / Hero（About 固有の背景や画像） */
 .hero{ background:#f9eedd; }
-.hero-img{ width:100%; display:block; object-fit:cover; height:auto; max-height:600px; }
+.hero-img{ width:100%; display:block; object-fit:cover; height:auto; max-height:600px; max-width:600px; margin:0 auto; }
 
 /* About セクション
    GUIDE: `.about` は About ページの主要なコンテンツ領域。
@@ -274,7 +274,7 @@ footer {
 .two-column{ display:flex; gap:36px; align-items:center; flex-wrap:wrap; justify-content:center; }
 .recommend .container{ max-width:900px; width:100%; }
 .img-wrap{ width:100%; }
-.img-wrap img{ width:100%; max-width:420px; border-radius:12px; box-shadow:0 10px 24px rgba(20,20,30,0.06); }
+.img-wrap{ width:100%; display:block; object-fit:cover; height:auto; max-height:600px; }
 
 /* If an image inside .img-wrap also uses .hero-img, make it match the hero sizing */
 .img-wrap img.hero-img{ width:100%; max-width:600px; height:auto; max-height:600px; border-radius:12px; box-shadow:0 10px 24px rgba(20,20,30,0.06); }

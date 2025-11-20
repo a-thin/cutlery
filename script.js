@@ -15,13 +15,19 @@ if (gallery) {
     const titleEl = p.querySelector('h3')
     const descEl = p.querySelector('p')
     const imgEl = p.querySelector('img')
+    const id = p.dataset.id
     const title = titleEl ? titleEl.innerText : ''
     const desc = descEl ? descEl.innerText : ''
     const src = imgEl ? imgEl.src : ''
     if (modalImg) modalImg.src = src
     if (modalTitle) modalTitle.innerText = title
     if (modalDesc) modalDesc.innerText = desc
+    // Store product ID in modal for purchase page
     if (modal) {
+      modal.dataset.productId = id
+      modal.dataset.productTitle = title
+      modal.dataset.productImg = src
+      modal.dataset.productDesc = desc
       modal.style.display = 'flex'
       modal.classList.add('open')
       // move focus into dialog for a11y
@@ -80,4 +86,20 @@ if (heroCard) {
     heroCard.style.transform = `rotateX(${dy * 6}deg) rotateY(${dx * 8}deg) translateZ(0)`
   })
   heroCard.addEventListener('mouseleave', () => { heroCard.style.transform = '' })
+}
+
+// Purchase button: pass product info via URL parameters
+const purchaseBtn = document.getElementById('purchase-btn')
+if (purchaseBtn) {
+  purchaseBtn.addEventListener('click', (e) => {
+    if (modal) {
+      const productId = modal.dataset.productId || ''
+      const productTitle = encodeURIComponent(modal.dataset.productTitle || '')
+      const productImg = encodeURIComponent(modal.dataset.productImg || '')
+      const productDesc = encodeURIComponent(modal.dataset.productDesc || '')
+      if (productId) {
+        purchaseBtn.href = `purchase.html?id=${productId}&title=${productTitle}&img=${productImg}&desc=${productDesc}`
+      }
+    }
+  })
 }

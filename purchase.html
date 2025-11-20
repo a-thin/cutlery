@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>購入 — Table Friends</title>
+  <meta name="description" content="Table Friends のダミー購入ページ" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <h1>Table Friends</h1>
+        <p>架空カトラリーのWeb展示</p>
+      </div>
+      <nav style="margin-left:auto; display:flex; gap:14px; align-items:center;">
+        <button class="btn" id="view-gallery" style="padding:8px 12px; font-size:14px; color:#fff; background:#4a90e2; border-radius:6px; font-weight:600;">ギャラリーを見る</button>
+        <a href="about.html" style="color:#fff; background:#4a90e2; padding:8px 12px; border-radius:6px; text-decoration:none; font-weight:600;">About</a>
+        <a href="index.html#voice" style="color:#fff; background:#4a90e2; padding:8px 12px; border-radius:6px; text-decoration:none; font-weight:600;">お客様の声</a>
+      </nav>
+    </header>
+
+    <main style="padding:40px 16px; max-width:900px; margin:0 auto;">
+      <h2>購入ページ</h2>
+      <p style="font-size: 16px; color: #666; line-height: 1.8; margin-top: 20px;">
+        このページは架空のダミー購入ページです。Table Friends は架空の商品であり、実際には購入できません。
+      </p>
+
+      <!-- 選択されたカトラリー情報 -->
+      <section style="margin-top: 40px; padding: 24px; background: #f0f4ff; border-radius: 8px; border-left: 4px solid #4a90e2;">
+        <h3 style="margin-bottom: 16px;">ご購入予定商品</h3>
+        <div style="display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap;">
+          <div id="product-image-container" style="flex: 0 0 auto; text-align: center;">
+            <img id="product-image" src="images/placeholder.png" alt="商品画像" style="max-width: 280px; height: auto; border-radius: 8px;" />
+          </div>
+          <div style="flex: 1 1 300px;">
+            <p><strong>商品名:</strong> <span id="product-name">カトラリー キャラクター</span></p>
+            <p style="margin-top: 12px;"><strong>説明:</strong></p>
+            <p id="product-desc" style="color: #666; line-height: 1.6;">商品の詳細情報がここに表示されます。</p>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top: 40px; padding: 24px; background: #f9f9f9; border-radius: 8px;">
+        <h3>ご注文内容</h3>
+        <table style="width:100%; margin-top: 16px; border-collapse: collapse;">
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td style="padding: 12px;">商品名</td>
+            <td style="padding: 12px; text-align: right;"><span id="order-name">カトラリー キャラクター</span></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td style="padding: 12px;">数量</td>
+            <td style="padding: 12px; text-align: right;">1個</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #ddd;">
+            <td style="padding: 12px;">価格</td>
+            <td style="padding: 12px; text-align: right;">¥999（税抜）</td>
+          </tr>
+          <tr style="background: #e8f0ff;">
+            <td style="padding: 12px; font-weight: bold;">合計</td>
+            <td style="padding: 12px; text-align: right; font-weight: bold;">¥1,098（税込）</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- <section style="margin-top: 40px;">
+        <h3>ダミー購入フロー</h3>
+        <ol style="margin-top: 16px; color: #666; line-height: 1.8;">
+          <li>商品を選択してください（実装例）</li>
+          <li>配送先情報を入力します（実装例）</li>
+          <li>お支払い方法を選択します（実装例）</li>
+          <li>ご注文を確認します（実装例）</li>
+          <li>ご購入完了（架空）</li>
+        </ol>
+      </section> -->
+
+      <div style="margin-top: 40px; text-align: center;">
+        <a href="index.html" style="display: inline-block; padding: 12px 24px; background: #4a90e2; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600;">トップに戻る</a>
+      </div>
+    </main>
+
+    <!-- フッター -->
+    <footer style="background: #222; color: #fff; text-align: center; padding: 20px 0; margin-top: 40px;">
+      <small>&copy; 2025 Table Friends. All Rights Reserved.</small>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+  <script>
+    // URL パラメータからカトラリー情報を取得して表示
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search)
+      const title = decodeURIComponent(params.get('title') || 'カトラリー キャラクター')
+      const img = decodeURIComponent(params.get('img') || '')
+      const desc = decodeURIComponent(params.get('desc') || '商品の詳細情報がここに表示されます。')
+      
+      // 画像を設定
+      const productImage = document.getElementById('product-image')
+      if (productImage && img) {
+        productImage.src = img
+        productImage.alt = title
+      }
+      
+      // テキストを設定
+      const productName = document.getElementById('product-name')
+      if (productName) productName.innerText = title
+      
+      const productDesc = document.getElementById('product-desc')
+      if (productDesc) productDesc.innerText = desc
+      
+      const orderName = document.getElementById('order-name')
+      if (orderName) orderName.innerText = title
+    })
+  </script>
+</body>
+</html>

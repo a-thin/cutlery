@@ -57,15 +57,17 @@ header {
 
 .hero .lead {
     background: linear-gradient(90deg, #fff, #fafaff);
-    padding: 28px;
+    padding: 70px;
     border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(30, 30, 60, 0.06)
+    box-shadow: 0 6px 18px rgba(30, 30, 60, 0.06);
+    margin: 100px 0
 }
 
 .lead h2 {
     font-size: 28px;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
     text-align: center;
+    margin: 100px 0
 
 }
 
@@ -74,6 +76,7 @@ header {
     margin-bottom: 18px;
     line-height: 1.6;
     text-align: center;
+    margin: 150px 0
 }
 
 .cta {
@@ -385,7 +388,7 @@ footer {
     box-shadow:0 10px 24px rgba(20,20,30,0.06); 
 }
 
-.check-list{ 
+sheck-list{ 
     list-style:none; 
     margin-top:12px; 
 }

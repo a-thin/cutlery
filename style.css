@@ -22,7 +22,7 @@ a {
 
 /* --- Container --- */
 .wrap {
-    max-width: 1100px;
+    max-width: 1600px;
     margin: 36px auto;
     padding: 24px
 }
@@ -173,7 +173,8 @@ header {
 
 .product .thumb {
     /* larger thumbnail area so cutlery is more visible */
-    height: 300px;
+    /* Increased height so cutlery images appear bigger in the collection/gallery */
+    /* height: 420px; */
     border-radius: 12px;
     overflow: hidden;
     display: flex;
@@ -184,7 +185,9 @@ header {
 
 /* ensure images scale to fill the thumbnail while preserving aspect ratio */
 .product .thumb img{
+    /* Allow images to grow to fill the thumbnail area while preserving aspect ratio */
     max-height: 100%;
+    max-width: 100%;
     width: auto;
     display: block;
     object-fit: contain;
@@ -321,6 +324,22 @@ footer {
 
     .modal-grid {
         grid-template-columns: 1fr
+    }
+}
+/* Responsive adjustments for gallery thumbnail (cutlery) sizes */
+@media (max-width: 800px) {
+    .product .thumb {
+        height: 340px;
+    }
+}
+@media (max-width: 480px) {
+    .product .thumb {
+        height: 220px;
+    }
+    /* smaller circular profile images used across About/Voice */
+    .about img, .recommend img, #voice img {
+        width: 96px !important;
+        height: 96px !important;
     }
 }
 /* --------------------------------------------------

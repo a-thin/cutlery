@@ -30,6 +30,9 @@ if (gallery) {
       modal.dataset.productDesc = desc
       modal.style.display = 'flex'
       modal.classList.add('open')
+      // reveal the quote under the clicked product and hide others
+      document.querySelectorAll('.product').forEach(el => el.classList.remove('show-quote'))
+      p.classList.add('show-quote')
       // move focus into dialog for a11y
       const focusTarget = modal.querySelector('#close-2') || modal
       focusTarget && focusTarget.focus && focusTarget.focus()
@@ -54,6 +57,8 @@ function closeModal() {
   if (!modal) return
   modal.style.display = 'none'
   modal.classList.remove('open')
+  // hide any revealed quotes when closing modal
+  document.querySelectorAll('.product').forEach(el => el.classList.remove('show-quote'))
 }
 
 if (close) close.addEventListener('click', closeModal)

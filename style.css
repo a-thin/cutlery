@@ -201,6 +201,15 @@ header {
     color: #556
 }
 
+/* hide the second paragraph (customer quote) by default in the gallery
+   and reveal when the product has the .show-quote class (on click) */
+.product p:nth-of-type(2){
+    display: none;
+}
+.product.show-quote p:nth-of-type(2){
+    display: block;
+}
+
 /* modal */
 .modal {
     position: fixed;
